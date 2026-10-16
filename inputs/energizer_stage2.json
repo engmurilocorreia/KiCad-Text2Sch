@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Energizador Estagio 2 - CGI (modelo T refletido, Martino et al. 2006)",
+    "top_name": "energizer_stage2"
+  },
+  "nets": [
+    {"name": "GND", "type": "power"},
+    {"name": "VC1"}, {"name": "P1"}, {"name": "P1A"}, {"name": "P2"},
+    {"name": "S1"}, {"name": "K"},
+    {"name": "GATE_SCR", "do_erc": false}
+  ],
+  "parts": [
+    {"ref": "C1", "lib": "Device", "name": "C_Polarized", "value": "20u/400V",
+     "footprint": "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm", "tag": "c1"},
+    {"ref": "S2", "lib": "Triac_Thyristor", "name": "TIC106", "value": "S8025R",
+     "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical", "tag": "scr"},
+    {"ref": "L1", "lib": "Device", "name": "L", "value": "1.7u",   "tag": "ldp"},
+    {"ref": "R1", "lib": "Device", "name": "R", "value": "12m",    "tag": "rp"},
+    {"ref": "L2", "lib": "Device", "name": "L", "value": "101u",   "tag": "lm"},
+    {"ref": "L3", "lib": "Device", "name": "L", "value": "1.7u",   "tag": "lds"},
+    {"ref": "R2", "lib": "Device", "name": "R", "value": "17.8m",  "tag": "rs"},
+    {"ref": "R3", "lib": "Device", "name": "R", "value": "1.102",  "tag": "rc"},
+    {"lib": "power", "name": "GND", "tag": "pwr_gnd"}
+  ],
+  "connections": [
+    {"net": "VC1",  "pins": ["C1.1", "S2.A"]},
+    {"net": "P1",   "pins": ["S2.K", "L1.1"]},
+    {"net": "P1A",  "pins": ["L1.2", "R1.1"]},
+    {"net": "P2",   "pins": ["R1.2", "L2.1", "L3.1"]},
+    {"net": "S1",   "pins": ["L3.2", "R2.1"]},
+    {"net": "K",    "pins": ["R2.2", "R3.1"]},
+    {"net": "GND",  "pins": ["C1.2", "L2.2", "R3.2"]},
+    {"net": "GATE_SCR", "pins": ["S2.G"]}
+  ]
+}

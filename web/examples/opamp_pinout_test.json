@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "LM741 pinout and no-connect test",
+    "top_name": "opamp_pinout_test",
+    "description": "Browser-engine fixture for LM741 pins, symmetric power rails, typed ports, and NC markers. Not an electrically qualified design."
+  },
+  "nets": [
+    {
+      "name": "VIN",
+      "type": "input"
+    },
+    {
+      "name": "VOUT",
+      "type": "output"
+    },
+    {
+      "name": "V+",
+      "type": "power"
+    },
+    {
+      "name": "V-",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "lib": "Amplifier_Operational",
+      "name": "LM741",
+      "ref": "U1",
+      "value": "LM741",
+      "no_connect": [
+        1,
+        5,
+        8
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "net": "VIN",
+      "pins": [
+        "U1.3"
+      ]
+    },
+    {
+      "net": "VOUT",
+      "pins": [
+        "U1.2",
+        "U1.6"
+      ]
+    },
+    {
+      "net": "V+",
+      "pins": [
+        "U1.7"
+      ]
+    },
+    {
+      "net": "V-",
+      "pins": [
+        "U1.4"
+      ]
+    }
+  ]
+}

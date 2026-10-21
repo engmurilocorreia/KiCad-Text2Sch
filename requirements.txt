@@ -1,0 +1,2 @@
+# SKiDL 3.x inclui suporte às bibliotecas do KiCad 10 e correções de descoberta de bibliotecas.
+skidl>=3.0.0,<4

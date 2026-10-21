@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KiCad-Text2Sch design",
+  "description": "Formato declarativo para descrever componentes, redes e conexões de um esquema KiCad.",
+  "type": "object",
+  "required": [
+    "parts",
+    "connections"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "top_name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^/\\\\]+$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "nets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "power",
+              "signal",
+              "input",
+              "output",
+              "bidirectional",
+              "tri_state",
+              "passive"
+            ],
+            "description": "power cria um símbolo de alimentação nativo quando disponível (GND/VS) ou uma definição de símbolo embutida para outros nomes de alimentação no motor do navegador. input/output/etc. cria global_label com forma visual; signal/omit cria label local. A paridade do conversor Python deve ser verificada separadamente."
+          },
+          "do_erc": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lib",
+          "name"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "ref"
+            ]
+          },
+          {
+            "required": [
+              "tag"
+            ]
+          }
+        ],
+        "properties": {
+          "lib": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tag": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {
+            "type": "string"
+          },
+          "footprint": {
+            "type": "string"
+          },
+          "rotation": {
+            "type": "integer",
+            "enum": [
+              0,
+              90,
+              180,
+              270
+            ],
+            "description": "Orientação visual opcional para símbolos multipinos; suportados 0, 90, 180 ou 270 graus. O motor browser aplica a rotação ao posicionar pinos e fios."
+          },
+          "no_connect": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              ]
+            },
+            "uniqueItems": true,
+            "description": "Optional pin numbers or names intentionally left electrically unconnected. Browser generator can emit native no-connect markers for supported symbols."
+          },
+          "noConnect": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              ]
+            },
+            "uniqueItems": true,
+            "description": "Alias of no_connect for compatibility; prefer no_connect."
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "net",
+          "pins"
+        ],
+        "properties": {
+          "net": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pins": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[^.]+\\..+$"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

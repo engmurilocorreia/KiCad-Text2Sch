@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Simple diode series test — VS to VOUT",
+    "top_name": "diode_rectifier_test"
+  },
+  "nets": [
+    {
+      "name": "VS",
+      "type": "power"
+    },
+    {
+      "name": "VOUT",
+      "type": "output"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "ref": "D1",
+      "lib": "Device",
+      "name": "D_Small",
+      "value": "1N4148"
+    },
+    {
+      "ref": "R1",
+      "lib": "Device",
+      "name": "R",
+      "value": "1k"
+    }
+  ],
+  "connections": [
+    {
+      "net": "VS",
+      "pins": [
+        "D1.2"
+      ]
+    },
+    {
+      "net": "VOUT",
+      "pins": [
+        "D1.1",
+        "R1.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R1.2"
+      ]
+    }
+  ]
+}

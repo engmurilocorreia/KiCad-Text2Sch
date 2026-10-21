@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 112" role="img" aria-labelledby="title desc">
+  <title id="title">KiCad-Text2Sch</title>
+  <desc id="desc">KiCad-Text2Sch — JSON para esquemas eletrônicos.</desc>
+  <g transform="translate(13 14)">
+    <path d="M15 4.5h25.5L52 16v37a5.5 5.5 0 0 1-5.5 5.5H15A5.5 5.5 0 0 1 9.5 53V10A5.5 5.5 0 0 1 15 4.5Z" fill="#122a3e" stroke="#40caa4" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M40.5 5v10.7H51" fill="none" stroke="#8de2c4" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M41 5.5 50.8 15.6H41Z" fill="#1aa88d"/>
+    <g fill="none" stroke="#47c6d6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16.5 28H24M36 28h9.5M31 37v6.5H19M31 43.5h14M31 43.5v5.3"/>
+      <path d="M26.5 49h9M28.5 52h5M30 55h2" stroke="#8de2c4"/>
+    </g>
+    <path d="M24 21v14l12-7Z" fill="#8de2c4"/>
+    <path d="M37.5 21v14" stroke="#8de2c4" stroke-width="2.6" stroke-linecap="round"/>
+    <g fill="#122a3e" stroke="#8de2c4" stroke-width="2.2"><circle cx="16.5" cy="28" r="3.2"/><circle cx="45.5" cy="28" r="3.2"/><circle cx="19" cy="43.5" r="3"/><circle cx="45" cy="43.5" r="3"/></g>
+  </g>
+  <text x="90" y="55" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="760" letter-spacing="-0.8" fill="#10243a">KiCad-<tspan fill="#079c83">Text2Sch</tspan></text>
+  <text x="92" y="79" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#536b80">JSON → esquemas eletrônicos, direto no navegador</text>
+</svg>

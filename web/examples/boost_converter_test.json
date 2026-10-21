@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "title": "Conversor Boost (step-up) - malha aberta",
+    "description": "Boost DC-DC em malha aberta. Valores são placeholders; circuito didático para testar layout e pinagem.",
+    "top_name": "boost_converter_test"
+  },
+  "nets": [
+    {
+      "name": "VIN",
+      "type": "power"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    },
+    {
+      "name": "SW",
+      "type": "passive"
+    },
+    {
+      "name": "VOUT",
+      "type": "output"
+    },
+    {
+      "name": "PWM",
+      "type": "input"
+    },
+    {
+      "name": "GATE",
+      "type": "passive"
+    }
+  ],
+  "parts": [
+    {
+      "lib": "Device",
+      "name": "L",
+      "ref": "L1",
+      "value": "L"
+    },
+    {
+      "lib": "Device",
+      "name": "C",
+      "ref": "C1",
+      "value": "C"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R1",
+      "value": "R"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "Rg",
+      "value": "R"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "Rpd",
+      "value": "R"
+    },
+    {
+      "lib": "Device",
+      "name": "D_Small",
+      "ref": "D1",
+      "value": "D"
+    },
+    {
+      "lib": "Transistor_FET",
+      "name": "Q_NMOS_GSD",
+      "ref": "Q1",
+      "value": "Q_NMOS"
+    }
+  ],
+  "connections": [
+    {
+      "net": "VIN",
+      "pins": [
+        "L1.1"
+      ]
+    },
+    {
+      "net": "SW",
+      "pins": [
+        "L1.2",
+        "Q1.3",
+        "D1.2"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "Q1.2",
+        "C1.2",
+        "R1.2",
+        "Rpd.2"
+      ]
+    },
+    {
+      "net": "VOUT",
+      "pins": [
+        "D1.1",
+        "C1.1",
+        "R1.1"
+      ]
+    },
+    {
+      "net": "PWM",
+      "pins": [
+        "Rg.1"
+      ]
+    },
+    {
+      "net": "GATE",
+      "pins": [
+        "Rg.2",
+        "Rpd.1",
+        "Q1.1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "MOSFET N — portas GATE, LOAD e GND",
+    "top_name": "mosfet_port_symbols"
+  },
+  "nets": [
+    {
+      "name": "GATE",
+      "type": "input"
+    },
+    {
+      "name": "LOAD",
+      "type": "output"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "ref": "Q1",
+      "lib": "Transistor_FET",
+      "name": "Q_NMOS_GSD",
+      "value": "N-MOSFET (generic)"
+    }
+  ],
+  "connections": [
+    {
+      "net": "GATE",
+      "pins": [
+        "Q1.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "Q1.2"
+      ]
+    },
+    {
+      "net": "LOAD",
+      "pins": [
+        "Q1.3"
+      ]
+    }
+  ]
+}

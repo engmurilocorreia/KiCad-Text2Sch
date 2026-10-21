@@ -1,0 +1,14 @@
+KiCad-Text2Sch
+Copyright 2026 Murilo Guimarães Correia
+
+KiCad-Text2Sch is an open-source project developed by Murilo Guimarães Correia. Original project code and documentation are offered under the Apache License 2.0, except where a file or third-party notice identifies different terms.
+
+Attribution and source repository:
+- Project: KiCad-Text2Sch
+- Primary author: Murilo Guimarães Correia
+- ORCID: https://orcid.org/0009-0000-0567-546X
+- Repository: https://github.com/engmurilocorreia/KiCad-Text2Sch
+
+Embedded or adapted schematic-symbol definitions originating from KiCad Symbols are identified in THIRD_PARTY_NOTICES.md and remain under their respective CC BY-SA 4.0 terms. This notice is informational and does not modify the Apache License 2.0.
+
+The original KiCad-Text2Sch brand assets `web/assets/logo-mark.svg`, `web/assets/logo-lockup.svg`, `web/assets/favicon.svg`, and the derived documentation preview `docs/assets/logo-preview.png` are project assets covered by Apache-2.0. They are not official KiCad logos or brand assets. KiCad is a trademark of its respective owner; this independent project is not affiliated with or endorsed by KiCad.

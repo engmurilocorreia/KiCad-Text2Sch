@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "PNP high-side stage (browser catalog test)",
+    "top_name": "bjt_pnp_high_side_test"
+  },
+  "nets": [
+    {
+      "name": "VS",
+      "type": "power"
+    },
+    {
+      "name": "CTRL",
+      "type": "input"
+    },
+    {
+      "name": "BASE"
+    },
+    {
+      "name": "LOAD",
+      "type": "output"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "ref": "Q1",
+      "lib": "Transistor_BJT",
+      "name": "Q_PNP_BCE",
+      "value": "PNP (generic)",
+      "rotation": 180
+    },
+    {
+      "ref": "R1",
+      "lib": "Device",
+      "name": "R",
+      "value": "10k"
+    },
+    {
+      "ref": "R2",
+      "lib": "Device",
+      "name": "R",
+      "value": "1k"
+    }
+  ],
+  "connections": [
+    {
+      "net": "CTRL",
+      "pins": [
+        "R1.1"
+      ]
+    },
+    {
+      "net": "BASE",
+      "pins": [
+        "R1.2",
+        "Q1.1"
+      ]
+    },
+    {
+      "net": "VS",
+      "pins": [
+        "Q1.3"
+      ]
+    },
+    {
+      "net": "LOAD",
+      "pins": [
+        "Q1.2",
+        "R2.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R2.2"
+      ]
+    }
+  ]
+}

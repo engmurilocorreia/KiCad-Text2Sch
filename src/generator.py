@@ -2,8 +2,9 @@
 from pathlib import Path
 from src.postprocess import polish_schematic
 
-from skidl import (Part, Net, POWER, generate_netlist, generate_schematic,
+from skidl import (Part, Net, POWER, generate_schematic,
                    set_default_tool, KICAD10)
+from src.kicad_cli import export_schematic_netlist, run_schematic_erc
 
 
 def build_circuit(data):
@@ -21,6 +22,8 @@ def build_circuit(data):
         nets[n["name"]] = net
 
     # --- Parts ---
+    # JSON angles map to SKiDL's symtx transform sequence (R=90° CCW, L=90° CW).
+    rotation_to_symtx = {0: "", 90: "R", 180: "RR", 270: "L"}
     for p in data.get("parts", []):
         kwargs = {}
         if p.get("value"):     kwargs["value"] = p["value"]
@@ -30,6 +33,9 @@ def build_circuit(data):
         part = Part(p["lib"], p["name"], **kwargs)
         if p.get("ref"):
             part.ref = p["ref"]
+        # Shared JSON orientation hint: these transforms rotate symbol and pin geometry together.
+        if p.get("rotation") is not None:
+            part.symtx = rotation_to_symtx[p["rotation"]]
         handles[p.get("ref") or p["tag"]] = part
 
     # --- Connections ---
@@ -46,7 +52,7 @@ def build_circuit(data):
     return nets, handles
 
 
-def export(data, out_dir, netlist=False):
+def export(data, out_dir, netlist=False, kicad_erc=False, kicad_cli=None):
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     meta = data.get("meta", {})
@@ -62,8 +68,8 @@ def export(data, out_dir, netlist=False):
         auto_stub=True, 
         retries=4, 
         flatness=1.0,
-        auto_stub_fanout=2,         # só stuba nets com >4 pinos
-        auto_stub_max_wire_pins=2   # idem p/ roteamento seletivo
+        auto_stub_fanout=3,         # redes com mais de 3 pinos podem virar labels antes do roteamento
+        auto_stub_max_wire_pins=3   # limite de pinos para roteamento seletivo após posicionamento
     )
 
     # Gera o esquemático diretamente na pasta de saída
@@ -74,9 +80,20 @@ def export(data, out_dir, netlist=False):
         polish_schematic(target)          # rebrand + badges + campos
         print(f"OK: {target} (polido)")
     else:
-        print(f"AVISO: {target} não foi gerado. Verifique os logs do SKiDL.")
+        message = f"O arquivo esperado não foi gerado: {target}. Verifique os logs do SKiDL."
+        if netlist or kicad_erc:
+            raise ValueError(message)
+        print(f"AVISO: {message}")
 
-    if netlist:
+    if target.exists() and netlist:
+        # Export from the final polished .kicad_sch rather than from SKiDL's
+        # intermediate circuit. This checks the actual schematic connectivity
+        # and does not require PCB footprints to be assigned to every part.
         netlist_path = out_dir / f"{top}.net"
-        generate_netlist(file_=str(netlist_path), tool=KICAD10)
-        print(f"OK: {netlist_path}")
+        export_schematic_netlist(target, netlist_path, explicit_cli=kicad_cli)
+        print(f"OK: Netlist KiCad exportada: {netlist_path}")
+
+    if target.exists() and kicad_erc:
+        erc_path = out_dir / f"{top}_erc.rpt"
+        run_schematic_erc(target, erc_path, explicit_cli=kicad_cli, output_format="report")
+        print(f"OK: Relatório ERC do KiCad: {erc_path}")

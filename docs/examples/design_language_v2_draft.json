@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0-draft",
+  "meta": {
+    "title": "RC low-pass stage",
+    "top_name": "rc_lowpass"
+  },
+  "nets": [
+    {"name": "VIN", "kind": "power", "display": {"power_symbol": "VS"}},
+    {"name": "VOUT", "kind": "signal", "display": {"label": "VOUT"}},
+    {"name": "GND", "kind": "ground", "display": {"power_symbol": "GND"}}
+  ],
+  "parts": [
+    {"id": "r_in", "ref": "R1", "symbol": {"library": "Device", "name": "R"}, "value": "10k", "footprint": "Resistor_SMD:R_0805_2012Metric", "layout": {"group": "filter", "orientation": 90}},
+    {"id": "c_out", "ref": "C1", "symbol": {"library": "Device", "name": "C"}, "value": "100n", "footprint": "Capacitor_SMD:C_0805_2012Metric", "layout": {"group": "filter", "orientation": 0}}
+  ],
+  "connections": [
+    {"net": "VIN", "pins": [{"part": "r_in", "pin": "1"}]},
+    {"net": "VOUT", "pins": [{"part": "r_in", "pin": "2"}, {"part": "c_out", "pin": "1"}]},
+    {"net": "GND", "pins": [{"part": "c_out", "pin": "2"}]}
+  ],
+  "no_connect": [],
+  "layout": {
+    "mode": "auto",
+    "signal_flow": "left_to_right",
+    "grid_mm": 2.54,
+    "minimum_clearance_mm": 2.54,
+    "field_policy": "outside_symbol",
+    "groups": [
+      {"id": "filter", "label": "RC filter", "members": ["r_in", "c_out"]}
+    ]
+  }
+}

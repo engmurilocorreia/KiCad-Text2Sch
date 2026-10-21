@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "KiCad-Text2Sch - RLC multi-branch layout test (not for production)",
+    "top_name": "rlc_layout_test"
+  },
+  "nets": [
+    {"name": "VS", "type": "power"},
+    {"name": "GND", "type": "power"},
+    {"name": "N1"},
+    {"name": "N2"},
+    {"name": "N3"},
+    {"name": "VOUT"}
+  ],
+  "parts": [
+    {"ref": "R1", "tag": "r_in", "lib": "Device", "name": "R", "value": "1k"},
+    {"ref": "C1", "tag": "c_n1", "lib": "Device", "name": "C", "value": "100n"},
+    {"ref": "L1", "tag": "l_stage1", "lib": "Device", "name": "L", "value": "10mH"},
+    {"ref": "R2", "tag": "r_damp", "lib": "Device", "name": "R", "value": "100"},
+    {"ref": "C2", "tag": "c_n3", "lib": "Device", "name": "C", "value": "4.7n"},
+    {"ref": "L2", "tag": "l_stage2", "lib": "Device", "name": "L", "value": "1mH"},
+    {"ref": "C3", "tag": "c_out", "lib": "Device", "name": "C", "value": "10n"},
+    {"ref": "R3", "tag": "r_load", "lib": "Device", "name": "R", "value": "10k"}
+  ],
+  "connections": [
+    {"net": "VS", "pins": ["R1.1"]},
+    {"net": "N1", "pins": ["R1.2", "C1.1", "L1.1"]},
+    {"net": "N2", "pins": ["L1.2", "R2.1"]},
+    {"net": "N3", "pins": ["R2.2", "C2.1", "L2.1"]},
+    {"net": "VOUT", "pins": ["L2.2", "C3.1", "R3.1"]},
+    {"net": "GND", "pins": ["C1.2", "C2.2", "C3.2", "R3.2"]}
+  ]
+}

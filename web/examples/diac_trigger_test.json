@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "DIAC DB3 test",
+    "top_name": "diac_trigger_test",
+    "description": "DIAC symbol and terminals test; not a complete trigger circuit."
+  },
+  "nets": [
+    {
+      "name": "V+",
+      "type": "power"
+    },
+    {
+      "name": "TRIGGER",
+      "type": "output"
+    }
+  ],
+  "parts": [
+    {
+      "lib": "Device",
+      "name": "DIAC",
+      "ref": "D1",
+      "value": "DB3"
+    }
+  ],
+  "connections": [
+    {
+      "net": "V+",
+      "pins": [
+        "D1.1"
+      ]
+    },
+    {
+      "net": "TRIGGER",
+      "pins": [
+        "D1.2"
+      ]
+    }
+  ]
+}

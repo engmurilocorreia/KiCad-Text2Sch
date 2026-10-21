@@ -1,0 +1,9 @@
+{
+  "name": "kicad-text2sch",
+  "private": true,
+  "version": "0.1.0-alpha.23",
+  "description": "KiCad-Text2Sch: local browser-native generation with a separate Python/SKiDL converter.",
+  "scripts": {
+    "test:browser": "node --test tests-js/*.test.cjs"
+  }
+}

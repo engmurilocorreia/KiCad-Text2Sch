@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use KiCad-Text2Sch in research or software, please cite this project."
+title: "KiCad-Text2Sch"
+abstract: "An AI-friendly JSON format and browser-native generator for editable KiCad schematics, with a Python/SKiDL conversion path."
+version: 0.1.0-alpha.23
+date-released: 2026-10-21
+license: Apache-2.0
+repository-code: "https://github.com/engmurilocorreia/KiCad-Text2Sch"
+authors:
+  - family-names: Correia
+    given-names: Murilo Guimarães
+    orcid: "https://orcid.org/0009-0000-0567-546X"

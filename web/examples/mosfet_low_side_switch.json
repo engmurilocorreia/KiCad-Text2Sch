@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "N-channel MOSFET low-side switch (browser catalog test)",
+    "top_name": "mosfet_low_side_switch"
+  },
+  "nets": [
+    {
+      "name": "VS",
+      "type": "power"
+    },
+    {
+      "name": "LOAD",
+      "type": "output"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    },
+    {
+      "name": "CTRL",
+      "type": "input"
+    },
+    {
+      "name": "GATE"
+    }
+  ],
+  "parts": [
+    {
+      "ref": "R1",
+      "lib": "Device",
+      "name": "R",
+      "value": "100",
+      "tag": "gate_series"
+    },
+    {
+      "ref": "R2",
+      "lib": "Device",
+      "name": "R",
+      "value": "100k",
+      "tag": "gate_pulldown"
+    },
+    {
+      "ref": "R3",
+      "lib": "Device",
+      "name": "R",
+      "value": "220",
+      "tag": "load"
+    },
+    {
+      "ref": "Q1",
+      "lib": "Transistor_FET",
+      "name": "Q_NMOS_GSD",
+      "value": "N-MOSFET (generic)",
+      "tag": "q_nmos"
+    }
+  ],
+  "connections": [
+    {
+      "net": "CTRL",
+      "pins": [
+        "R1.1"
+      ]
+    },
+    {
+      "net": "GATE",
+      "pins": [
+        "R1.2",
+        "R2.1",
+        "Q1.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R2.2",
+        "Q1.2"
+      ]
+    },
+    {
+      "net": "VS",
+      "pins": [
+        "R3.1"
+      ]
+    },
+    {
+      "net": "LOAD",
+      "pins": [
+        "R3.2",
+        "Q1.3"
+      ]
+    }
+  ]
+}

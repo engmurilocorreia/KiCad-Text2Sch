@@ -1,0 +1,65 @@
+(kicad_symbol_lib
+  (version 20250114)
+  (generator "eeschema")
+  (symbol "LM358P"
+    (pin_names (offset 0.254))
+    (pin_numbers (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "U" (at 0 0 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "LM358P" (at 0 0 0) (effects (font (size 1.27 1.27))))
+    (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Description" "LM358P-like dual op-amp with shared power unit; test fixture" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (symbol "LM358P_0_1"
+      (text "DUAL" (at 0 0 0) (effects (font (size 1.016 1.016))))
+    )
+    (symbol "LM358P_1_1"
+      (polyline (pts (xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)) (stroke (width 0.1524) (type default)) (fill (type background)))
+      (pin input line (at -12.7 2.54 0) (length 7.62) (name "+" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
+      (pin input line (at -12.7 -2.54 0) (length 7.62) (name "-" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
+      (pin output line (at 12.7 0 180) (length 7.62) (name "~" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
+    )
+    (symbol "LM358P_2_1"
+      (polyline (pts (xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)) (stroke (width 0.1524) (type default)) (fill (type background)))
+      (pin input line (at -12.7 2.54 0) (length 7.62) (name "+" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
+      (pin input line (at -12.7 -2.54 0) (length 7.62) (name "-" (effects (font (size 1.016 1.016)))) (number "6" (effects (font (size 1.016 1.016)))))
+      (pin output line (at 12.7 0 180) (length 7.62) (name "~" (effects (font (size 1.016 1.016)))) (number "7" (effects (font (size 1.016 1.016)))))
+    )
+    (symbol "LM358P_3_1"
+      (pin power_in line (at 0 10.16 270) (length 6.35) (name "V+" (effects (font (size 1.016 1.016)))) (number "8" (effects (font (size 1.016 1.016)))))
+      (pin power_in line (at 0 -10.16 90) (length 6.35) (name "V-" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
+    )
+    (symbol "LM358P_1_2"
+      (polyline (pts (xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)) (stroke (width 0.1524) (type default)) (fill (type background)))
+      (pin input line (at -12.7 2.54 0) (length 7.62) (name "+" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
+      (pin input line (at -12.7 -2.54 0) (length 7.62) (name "-" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
+      (pin output line (at 12.7 0 180) (length 7.62) (name "~" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
+    )
+  )
+  (symbol "LM358P_Extended"
+    (extends "LM358P")
+    (property "Reference" "U" (at 0 0 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "LM358P_Extended" (at 0 0 0) (effects (font (size 1.27 1.27))))
+  )
+
+  (symbol "BC337"
+    (pin_names (offset 0.254))
+    (pin_numbers (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "Q" (at 0 0 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "BC337" (at 0 0 0) (effects (font (size 1.27 1.27))))
+    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (symbol "BC337_0_1"
+      (circle (center 1.27 0) (radius 2.54) (stroke (width 0.254) (type default)) (fill (type none)))
+    )
+    (symbol "BC337_1_1"
+      (pin input line (at -5.08 0 0) (length 2.54) (name "B" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
+      (pin passive line (at 2.54 5.08 270) (length 2.54) (name "C" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
+      (pin passive line (at 2.54 -5.08 90) (length 2.54) (name "E" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
+    )
+  )
+)

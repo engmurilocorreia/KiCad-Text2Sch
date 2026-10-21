@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "NPN common-emitter stage (browser catalog test)",
+    "top_name": "bjt_common_emitter_test"
+  },
+  "nets": [
+    {
+      "name": "IN"
+    },
+    {
+      "name": "BASE"
+    },
+    {
+      "name": "VS",
+      "type": "power"
+    },
+    {
+      "name": "COLLECTOR"
+    },
+    {
+      "name": "EMITTER"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "ref": "R1",
+      "lib": "Device",
+      "name": "R",
+      "value": "10k",
+      "tag": "base_resistor"
+    },
+    {
+      "ref": "R2",
+      "lib": "Device",
+      "name": "R",
+      "value": "4.7k",
+      "tag": "collector_resistor"
+    },
+    {
+      "ref": "R3",
+      "lib": "Device",
+      "name": "R",
+      "value": "1k",
+      "tag": "emitter_resistor"
+    },
+    {
+      "ref": "Q1",
+      "lib": "Transistor_BJT",
+      "name": "Q_NPN_BCE",
+      "value": "NPN (generic)",
+      "tag": "q_npn"
+    }
+  ],
+  "connections": [
+    {
+      "net": "IN",
+      "pins": [
+        "R1.1"
+      ]
+    },
+    {
+      "net": "BASE",
+      "pins": [
+        "R1.2",
+        "Q1.1"
+      ]
+    },
+    {
+      "net": "VS",
+      "pins": [
+        "R2.1"
+      ]
+    },
+    {
+      "net": "COLLECTOR",
+      "pins": [
+        "R2.2",
+        "Q1.2"
+      ]
+    },
+    {
+      "net": "EMITTER",
+      "pins": [
+        "R3.1",
+        "Q1.3"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R3.2"
+      ]
+    }
+  ]
+}

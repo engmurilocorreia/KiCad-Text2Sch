@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "P-MOSFET high-side switch (browser catalog test)",
+    "top_name": "p_mosfet_high_side_switch"
+  },
+  "nets": [
+    {
+      "name": "VS",
+      "type": "power"
+    },
+    {
+      "name": "CTRL",
+      "type": "input"
+    },
+    {
+      "name": "LOAD",
+      "type": "output"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "ref": "Q1",
+      "lib": "Transistor_FET",
+      "name": "Q_PMOS_GSD",
+      "value": "P-MOSFET (generic)",
+      "rotation": 180
+    },
+    {
+      "ref": "R1",
+      "lib": "Device",
+      "name": "R",
+      "value": "1k"
+    }
+  ],
+  "connections": [
+    {
+      "net": "VS",
+      "pins": [
+        "Q1.2"
+      ]
+    },
+    {
+      "net": "CTRL",
+      "pins": [
+        "Q1.1"
+      ]
+    },
+    {
+      "net": "LOAD",
+      "pins": [
+        "Q1.3",
+        "R1.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R1.2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Circuit1 - divisor RC (golden sample)",
+    "top_name": "circuit1_gen"
+  },
+  "nets": [
+    {"name": "VS",  "type": "power"},
+    {"name": "GND", "type": "power"},
+    {"name": "N1"}
+  ],
+  "parts": [
+    {"ref": "R1", "lib": "Device", "name": "R", "value": "10k",
+     "footprint": "Resistor_SMD:R_0805_2012Metric", "tag": "r1"},
+    {"ref": "R2", "lib": "Device", "name": "R", "value": "10k",
+     "footprint": "Resistor_SMD:R_0805_2012Metric", "tag": "r2"},
+    {"ref": "C1", "lib": "Device", "name": "C", "value": "100n",
+     "footprint": "Capacitor_SMD:C_0805_2012Metric", "tag": "c1"}
+  ],
+    "connections": [
+    {"net": "VS",  "pins": ["R1.1"]},
+    {"net": "N1",  "pins": ["R1.2", "R2.1", "C1.1"]},
+    {"net": "GND", "pins": ["R2.2", "C1.2"]}
+    ]
+}

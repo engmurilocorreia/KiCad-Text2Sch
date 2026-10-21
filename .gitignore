@@ -45,6 +45,10 @@ desktop.ini
 # Generated outputs (IMPORTANT: don't commit generated files)
 outputs/
 *.kicad_sch
+# Explicit reference schematics may be committed as test fixtures.
+!tests/fixtures/
+!tests/fixtures/*.kicad_sch
+!tests/fixtures/**/*.kicad_sch
 *.kicad_pcb
 *.net
 *.xml

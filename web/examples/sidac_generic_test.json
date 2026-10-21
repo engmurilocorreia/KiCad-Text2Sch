@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Generic SIDAC symbol test",
+    "top_name": "sidac_generic_test",
+    "description": "Generic two-terminal SIDAC graphical symbol only; not a manufacturer-specific or simulation model."
+  },
+  "nets": [
+    {
+      "name": "AC1",
+      "type": "input"
+    },
+    {
+      "name": "AC2",
+      "type": "output"
+    }
+  ],
+  "parts": [
+    {
+      "lib": "KiCadText2Sch",
+      "name": "SIDAC_Generic",
+      "ref": "D1",
+      "value": "SIDAC"
+    }
+  ],
+  "connections": [
+    {
+      "net": "AC1",
+      "pins": [
+        "D1.1"
+      ]
+    },
+    {
+      "net": "AC2",
+      "pins": [
+        "D1.2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/kicad-text2sch/design-v2-draft.schema.json",
+  "title": "KiCad-Text2Sch Design Language v2 (draft)",
+  "description": "PROPOSAL ONLY. The current parser/generator does not yet implement this schema.",
+  "type": "object",
+  "required": ["schema_version", "meta", "parts", "nets", "connections", "layout"],
+  "properties": {
+    "schema_version": {"const": "2.0-draft"},
+    "meta": {
+      "type": "object",
+      "required": ["title", "top_name"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "top_name": {"type": "string", "minLength": 1, "pattern": "^[^/\\\\]+$"},
+        "description": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "nets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "kind"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["signal", "power", "ground"]},
+          "display": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string", "minLength": 1},
+              "power_symbol": {"type": "string", "minLength": 1},
+              "scope": {"enum": ["local", "global", "hierarchical"]}
+            },
+            "additionalProperties": false
+          },
+          "do_erc": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "ref", "symbol", "value"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"},
+          "ref": {"type": "string", "minLength": 1},
+          "symbol": {
+            "type": "object",
+            "required": ["library", "name"],
+            "properties": {
+              "library": {"type": "string", "minLength": 1},
+              "name": {"type": "string", "minLength": 1},
+              "unit": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          },
+          "value": {"type": "string"},
+          "footprint": {"type": "string"},
+          "fields": {"type": "object", "additionalProperties": {"type": "string"}},
+          "layout": {
+            "type": "object",
+            "properties": {
+              "group": {"type": "string", "minLength": 1},
+              "orientation": {"enum": [0, 90, 180, 270]},
+              "placement_locked": {"type": "boolean"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["net", "pins"],
+        "properties": {
+          "net": {"type": "string", "minLength": 1},
+          "pins": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "required": ["part", "pin"],
+              "properties": {
+                "part": {"type": "string", "minLength": 1},
+                "pin": {"type": "string", "minLength": 1}
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "no_connect": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["part", "pin"],
+        "properties": {
+          "part": {"type": "string", "minLength": 1},
+          "pin": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "layout": {
+      "type": "object",
+      "required": ["mode", "field_policy"],
+      "properties": {
+        "mode": {"enum": ["auto", "guided", "locked"]},
+        "signal_flow": {"enum": ["left_to_right", "top_to_bottom", "free"]},
+        "grid_mm": {"type": "number", "exclusiveMinimum": 0},
+        "minimum_clearance_mm": {"type": "number", "minimum": 0},
+        "field_policy": {"enum": ["outside_symbol", "kicad_default", "best_fit"]},
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "members"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "label": {"type": "string", "minLength": 1},
+              "members": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

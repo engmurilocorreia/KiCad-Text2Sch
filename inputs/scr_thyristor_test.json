@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "SCR BT169B pin test",
+    "top_name": "scr_thyristor_test",
+    "description": "Symbol and pin mapping test; not a qualified SCR drive circuit."
+  },
+  "nets": [
+    {
+      "name": "VS",
+      "type": "power"
+    },
+    {
+      "name": "GATE",
+      "type": "input"
+    },
+    {
+      "name": "GND",
+      "type": "power"
+    }
+  ],
+  "parts": [
+    {
+      "lib": "Triac_Thyristor",
+      "name": "BT169B",
+      "ref": "Q1",
+      "value": "BT169B"
+    }
+  ],
+  "connections": [
+    {
+      "net": "VS",
+      "pins": [
+        "Q1.1"
+      ]
+    },
+    {
+      "net": "GATE",
+      "pins": [
+        "Q1.2"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "Q1.3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1337 @@
+{
+  "meta": {
+    "title": "Automatic multi-sheet layout stress test",
+    "description": "Synthetic layout fixture; tests A4 packing and hierarchical sheet export, not a functional circuit.",
+    "top_name": "multisheet_layout_stress_test"
+  },
+  "nets": [
+    {
+      "name": "GND",
+      "type": "power"
+    },
+    {
+      "name": "OUT_01",
+      "type": "output"
+    },
+    {
+      "name": "OUT_02",
+      "type": "output"
+    },
+    {
+      "name": "OUT_03",
+      "type": "output"
+    },
+    {
+      "name": "OUT_04",
+      "type": "output"
+    },
+    {
+      "name": "OUT_05",
+      "type": "output"
+    },
+    {
+      "name": "OUT_06",
+      "type": "output"
+    },
+    {
+      "name": "OUT_07",
+      "type": "output"
+    },
+    {
+      "name": "OUT_08",
+      "type": "output"
+    },
+    {
+      "name": "OUT_09",
+      "type": "output"
+    },
+    {
+      "name": "OUT_10",
+      "type": "output"
+    },
+    {
+      "name": "OUT_11",
+      "type": "output"
+    },
+    {
+      "name": "OUT_12",
+      "type": "output"
+    },
+    {
+      "name": "OUT_13",
+      "type": "output"
+    },
+    {
+      "name": "OUT_14",
+      "type": "output"
+    },
+    {
+      "name": "OUT_15",
+      "type": "output"
+    },
+    {
+      "name": "OUT_16",
+      "type": "output"
+    },
+    {
+      "name": "OUT_17",
+      "type": "output"
+    },
+    {
+      "name": "OUT_18",
+      "type": "output"
+    },
+    {
+      "name": "OUT_19",
+      "type": "output"
+    },
+    {
+      "name": "OUT_20",
+      "type": "output"
+    },
+    {
+      "name": "OUT_21",
+      "type": "output"
+    },
+    {
+      "name": "OUT_22",
+      "type": "output"
+    },
+    {
+      "name": "OUT_23",
+      "type": "output"
+    },
+    {
+      "name": "OUT_24",
+      "type": "output"
+    },
+    {
+      "name": "OUT_25",
+      "type": "output"
+    },
+    {
+      "name": "OUT_26",
+      "type": "output"
+    },
+    {
+      "name": "OUT_27",
+      "type": "output"
+    },
+    {
+      "name": "OUT_28",
+      "type": "output"
+    },
+    {
+      "name": "OUT_29",
+      "type": "output"
+    },
+    {
+      "name": "OUT_30",
+      "type": "output"
+    },
+    {
+      "name": "OUT_31",
+      "type": "output"
+    },
+    {
+      "name": "OUT_32",
+      "type": "output"
+    },
+    {
+      "name": "OUT_33",
+      "type": "output"
+    },
+    {
+      "name": "OUT_34",
+      "type": "output"
+    },
+    {
+      "name": "OUT_35",
+      "type": "output"
+    },
+    {
+      "name": "OUT_36",
+      "type": "output"
+    },
+    {
+      "name": "OUT_37",
+      "type": "output"
+    },
+    {
+      "name": "OUT_38",
+      "type": "output"
+    },
+    {
+      "name": "OUT_39",
+      "type": "output"
+    },
+    {
+      "name": "OUT_40",
+      "type": "output"
+    },
+    {
+      "name": "OUT_41",
+      "type": "output"
+    },
+    {
+      "name": "OUT_42",
+      "type": "output"
+    },
+    {
+      "name": "OUT_43",
+      "type": "output"
+    },
+    {
+      "name": "OUT_44",
+      "type": "output"
+    },
+    {
+      "name": "OUT_45",
+      "type": "output"
+    },
+    {
+      "name": "OUT_46",
+      "type": "output"
+    },
+    {
+      "name": "OUT_47",
+      "type": "output"
+    },
+    {
+      "name": "OUT_48",
+      "type": "output"
+    },
+    {
+      "name": "OUT_49",
+      "type": "output"
+    },
+    {
+      "name": "OUT_50",
+      "type": "output"
+    },
+    {
+      "name": "OUT_51",
+      "type": "output"
+    },
+    {
+      "name": "OUT_52",
+      "type": "output"
+    },
+    {
+      "name": "OUT_53",
+      "type": "output"
+    },
+    {
+      "name": "OUT_54",
+      "type": "output"
+    },
+    {
+      "name": "OUT_55",
+      "type": "output"
+    },
+    {
+      "name": "OUT_56",
+      "type": "output"
+    },
+    {
+      "name": "OUT_57",
+      "type": "output"
+    },
+    {
+      "name": "OUT_58",
+      "type": "output"
+    },
+    {
+      "name": "OUT_59",
+      "type": "output"
+    },
+    {
+      "name": "OUT_60",
+      "type": "output"
+    }
+  ],
+  "parts": [
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R1",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R2",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R3",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R4",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R5",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R6",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R7",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R8",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R9",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R10",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R11",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R12",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R13",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R14",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R15",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R16",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R17",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R18",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R19",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R20",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R21",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R22",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R23",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R24",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R25",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R26",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R27",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R28",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R29",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R30",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R31",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R32",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R33",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R34",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R35",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R36",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R37",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R38",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R39",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R40",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R41",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R42",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R43",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R44",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R45",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R46",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R47",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R48",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R49",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R50",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R51",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R52",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R53",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R54",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R55",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R56",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R57",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R58",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R59",
+      "value": "10k"
+    },
+    {
+      "lib": "Device",
+      "name": "R",
+      "ref": "R60",
+      "value": "10k"
+    }
+  ],
+  "connections": [
+    {
+      "net": "OUT_01",
+      "pins": [
+        "R1.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R1.2"
+      ]
+    },
+    {
+      "net": "OUT_02",
+      "pins": [
+        "R2.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R2.2"
+      ]
+    },
+    {
+      "net": "OUT_03",
+      "pins": [
+        "R3.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R3.2"
+      ]
+    },
+    {
+      "net": "OUT_04",
+      "pins": [
+        "R4.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R4.2"
+      ]
+    },
+    {
+      "net": "OUT_05",
+      "pins": [
+        "R5.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R5.2"
+      ]
+    },
+    {
+      "net": "OUT_06",
+      "pins": [
+        "R6.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R6.2"
+      ]
+    },
+    {
+      "net": "OUT_07",
+      "pins": [
+        "R7.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R7.2"
+      ]
+    },
+    {
+      "net": "OUT_08",
+      "pins": [
+        "R8.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R8.2"
+      ]
+    },
+    {
+      "net": "OUT_09",
+      "pins": [
+        "R9.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R9.2"
+      ]
+    },
+    {
+      "net": "OUT_10",
+      "pins": [
+        "R10.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R10.2"
+      ]
+    },
+    {
+      "net": "OUT_11",
+      "pins": [
+        "R11.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R11.2"
+      ]
+    },
+    {
+      "net": "OUT_12",
+      "pins": [
+        "R12.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R12.2"
+      ]
+    },
+    {
+      "net": "OUT_13",
+      "pins": [
+        "R13.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R13.2"
+      ]
+    },
+    {
+      "net": "OUT_14",
+      "pins": [
+        "R14.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R14.2"
+      ]
+    },
+    {
+      "net": "OUT_15",
+      "pins": [
+        "R15.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R15.2"
+      ]
+    },
+    {
+      "net": "OUT_16",
+      "pins": [
+        "R16.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R16.2"
+      ]
+    },
+    {
+      "net": "OUT_17",
+      "pins": [
+        "R17.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R17.2"
+      ]
+    },
+    {
+      "net": "OUT_18",
+      "pins": [
+        "R18.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R18.2"
+      ]
+    },
+    {
+      "net": "OUT_19",
+      "pins": [
+        "R19.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R19.2"
+      ]
+    },
+    {
+      "net": "OUT_20",
+      "pins": [
+        "R20.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R20.2"
+      ]
+    },
+    {
+      "net": "OUT_21",
+      "pins": [
+        "R21.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R21.2"
+      ]
+    },
+    {
+      "net": "OUT_22",
+      "pins": [
+        "R22.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R22.2"
+      ]
+    },
+    {
+      "net": "OUT_23",
+      "pins": [
+        "R23.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R23.2"
+      ]
+    },
+    {
+      "net": "OUT_24",
+      "pins": [
+        "R24.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R24.2"
+      ]
+    },
+    {
+      "net": "OUT_25",
+      "pins": [
+        "R25.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R25.2"
+      ]
+    },
+    {
+      "net": "OUT_26",
+      "pins": [
+        "R26.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R26.2"
+      ]
+    },
+    {
+      "net": "OUT_27",
+      "pins": [
+        "R27.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R27.2"
+      ]
+    },
+    {
+      "net": "OUT_28",
+      "pins": [
+        "R28.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R28.2"
+      ]
+    },
+    {
+      "net": "OUT_29",
+      "pins": [
+        "R29.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R29.2"
+      ]
+    },
+    {
+      "net": "OUT_30",
+      "pins": [
+        "R30.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R30.2"
+      ]
+    },
+    {
+      "net": "OUT_31",
+      "pins": [
+        "R31.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R31.2"
+      ]
+    },
+    {
+      "net": "OUT_32",
+      "pins": [
+        "R32.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R32.2"
+      ]
+    },
+    {
+      "net": "OUT_33",
+      "pins": [
+        "R33.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R33.2"
+      ]
+    },
+    {
+      "net": "OUT_34",
+      "pins": [
+        "R34.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R34.2"
+      ]
+    },
+    {
+      "net": "OUT_35",
+      "pins": [
+        "R35.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R35.2"
+      ]
+    },
+    {
+      "net": "OUT_36",
+      "pins": [
+        "R36.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R36.2"
+      ]
+    },
+    {
+      "net": "OUT_37",
+      "pins": [
+        "R37.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R37.2"
+      ]
+    },
+    {
+      "net": "OUT_38",
+      "pins": [
+        "R38.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R38.2"
+      ]
+    },
+    {
+      "net": "OUT_39",
+      "pins": [
+        "R39.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R39.2"
+      ]
+    },
+    {
+      "net": "OUT_40",
+      "pins": [
+        "R40.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R40.2"
+      ]
+    },
+    {
+      "net": "OUT_41",
+      "pins": [
+        "R41.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R41.2"
+      ]
+    },
+    {
+      "net": "OUT_42",
+      "pins": [
+        "R42.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R42.2"
+      ]
+    },
+    {
+      "net": "OUT_43",
+      "pins": [
+        "R43.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R43.2"
+      ]
+    },
+    {
+      "net": "OUT_44",
+      "pins": [
+        "R44.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R44.2"
+      ]
+    },
+    {
+      "net": "OUT_45",
+      "pins": [
+        "R45.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R45.2"
+      ]
+    },
+    {
+      "net": "OUT_46",
+      "pins": [
+        "R46.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R46.2"
+      ]
+    },
+    {
+      "net": "OUT_47",
+      "pins": [
+        "R47.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R47.2"
+      ]
+    },
+    {
+      "net": "OUT_48",
+      "pins": [
+        "R48.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R48.2"
+      ]
+    },
+    {
+      "net": "OUT_49",
+      "pins": [
+        "R49.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R49.2"
+      ]
+    },
+    {
+      "net": "OUT_50",
+      "pins": [
+        "R50.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R50.2"
+      ]
+    },
+    {
+      "net": "OUT_51",
+      "pins": [
+        "R51.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R51.2"
+      ]
+    },
+    {
+      "net": "OUT_52",
+      "pins": [
+        "R52.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R52.2"
+      ]
+    },
+    {
+      "net": "OUT_53",
+      "pins": [
+        "R53.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R53.2"
+      ]
+    },
+    {
+      "net": "OUT_54",
+      "pins": [
+        "R54.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R54.2"
+      ]
+    },
+    {
+      "net": "OUT_55",
+      "pins": [
+        "R55.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R55.2"
+      ]
+    },
+    {
+      "net": "OUT_56",
+      "pins": [
+        "R56.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R56.2"
+      ]
+    },
+    {
+      "net": "OUT_57",
+      "pins": [
+        "R57.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R57.2"
+      ]
+    },
+    {
+      "net": "OUT_58",
+      "pins": [
+        "R58.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R58.2"
+      ]
+    },
+    {
+      "net": "OUT_59",
+      "pins": [
+        "R59.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R59.2"
+      ]
+    },
+    {
+      "net": "OUT_60",
+      "pins": [
+        "R60.1"
+      ]
+    },
+    {
+      "net": "GND",
+      "pins": [
+        "R60.2"
+      ]
+    }
+  ]
+}
